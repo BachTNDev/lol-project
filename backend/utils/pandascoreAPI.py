@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Get API Key
-PANDASCORE_API_KEY = os.getenv("ryM4JJYOq7Kb-seT5EDhyYi27o0hMJGFQDtqPw8L0vk72m7iQac")
+PANDASCORE_API_KEY = os.getenv("API_KEY")
 
 # Base URL for PandaScore API
 BASE_URL = "https://api.pandascore.co/lol"
