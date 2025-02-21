@@ -1,22 +1,11 @@
-# backend/main.py
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from api import matches  # Import the router from api/matches.py
+from api.matches import router as matches_router
 
-app = FastAPI(title="ProMatch Analyzer API")
+app = FastAPI()
 
-# Enable CORS for all origins (modify for production use)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Include match-related routes under a common prefix
-app.include_router(matches.router, prefix="/matches", tags=["matches"])
+# Include the router
+app.include_router(matches_router, prefix="/api")
 
 @app.get("/")
-def read_root():
-    return {"message": "Welcome to the ProMatch Analyzer API!"}
+def root():
+    return {"message": "Welcome to ProMatch Analyzer API"}
