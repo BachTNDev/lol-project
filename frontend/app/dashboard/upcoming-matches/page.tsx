@@ -1,10 +1,9 @@
-// Example: frontend/src/pages/dashboard/upcoming.tsx (Pages Router)
-import UpcomingMatches from "../../../components/UpcomingMatches";
+import UpcomingMatches from '@/components/UpcomingMatches';
 
 export default function UpcomingPage() {
   return (
-    <div className="min-h-screen p-8">
-      <h2 className="text-2xl font-bold mb-4">Dashboard - Upcoming Matches</h2>
+    <div className="min-h-screen p-8 container mx-auto">
+      <h1 className="text-3xl font-bold mb-8">Upcoming Matches Dashboard</h1>
       <UpcomingMatches />
     </div>
   );
