@@ -1,21 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;        /* White */
+  --foreground: 240 10% 4%;       /* Zinc-950 */
+  
+  --primary: 221 83% 53%;         /* Blue-600 */
+  --primary-foreground: 0 0% 98%;  /* Zinc-50 */
+  
+  --muted: 240 5% 96%;            /* Zinc-100 */
+  --muted-foreground: 240 4% 46%;  /* Zinc-500 */
+  
+  --border: 240 6% 90%;           /* Zinc-200 */
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+/* Use the .dark class to override variables for dark mode */
+html.dark {
+  --background: 240 10% 4%;     /* Zinc-950 */
+  --foreground: 0 0% 98%;       /* Zinc-50 */
+  
+  --primary: 217 91% 60%;       /* Blue-500 */
+  --primary-foreground: 240 6% 10%;
+  
+  --muted: 240 4% 16%;          /* Zinc-800 */
+  --muted-foreground: 240 5% 65%; /* Zinc-400 */
+  
+  --border: 240 4% 20%;         /* Zinc-700 */
+}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.015em;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom selection colors */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer utilities {
+  /* Custom shadow */
+  .shadow-hero {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
 }
