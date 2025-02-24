@@ -5,30 +5,30 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;        /* White */
-  --foreground: 240 10% 4%;       /* Zinc-950 */
+  --background: #ffffff;        /* White */
+  --foreground: #171717;        /* Dark Gray (example) */
   
-  --primary: 221 83% 53%;         /* Blue-600 */
-  --primary-foreground: 0 0% 98%;  /* Zinc-50 */
+  --primary: #2563eb;           /* Blue-600 (example) */
+  --primary-foreground: #f8fafc; /* Light color for text on primary */
   
-  --muted: 240 5% 96%;            /* Zinc-100 */
-  --muted-foreground: 240 4% 46%;  /* Zinc-500 */
+  --muted: #f3f4f6;             /* Gray-100 */
+  --muted-foreground: #6b7280;  /* Gray-500 */
   
-  --border: 240 6% 90%;           /* Zinc-200 */
+  --border: #e5e7eb;            /* Gray-200 */
 }
 
-/* Use the .dark class to override variables for dark mode */
+/* Dark mode overrides */
 html.dark {
-  --background: 240 10% 4%;     /* Zinc-950 */
-  --foreground: 0 0% 98%;       /* Zinc-50 */
+  --background: #1e293b;        /* Example dark background (e.g., Zinc-950) */
+  --foreground: #f8fafc;        /* White */
   
-  --primary: 217 91% 60%;       /* Blue-500 */
-  --primary-foreground: 240 6% 10%;
+  --primary: #3b82f6;           /* Blue-500 */
+  --primary-foreground: #1e293b;
   
-  --muted: 240 4% 16%;          /* Zinc-800 */
-  --muted-foreground: 240 5% 65%; /* Zinc-400 */
+  --muted: #374151;             /* Gray-800 */
+  --muted-foreground: #9ca3af;  /* Gray-400 */
   
-  --border: 240 4% 20%;         /* Zinc-700 */
+  --border: #374151;            /* Gray-700 */
 }
 
 @layer base {
@@ -67,7 +67,11 @@ html.dark {
 @layer utilities {
   /* Custom shadow */
   .shadow-hero {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Light mode */
+  }
+  
+  .dark .shadow-hero {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Dark mode */
   }
   
   /* Gradient text */

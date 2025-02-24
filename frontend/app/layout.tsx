@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import "@/app/ui/global.css";
 import type { Metadata } from "next";
