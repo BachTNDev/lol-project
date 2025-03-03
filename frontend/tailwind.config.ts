@@ -23,8 +23,8 @@ const config: Config = {
         border: "hsl(var(--border))",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Poppins", "system-ui", "sans-serif"],
+        sans: ["Anek Devanagari", "system-ui", "sans-serif"],
+        heading: ["Anek Devanagari", "system-ui", "sans-serif"],
       },
     },
   },

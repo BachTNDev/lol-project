@@ -20,7 +20,7 @@ export default function DashboardButton({
       className={`flex items-center justify-center p-4 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors ${className}`}
     >
       {icon && <span className="mr-2">{icon}</span>}
-      <span>{text}</span>
+      <span className="transform translate-y-[4px]">{text}</span>
     </Link>
   );
 }

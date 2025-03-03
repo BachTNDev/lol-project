@@ -22,7 +22,7 @@ def fetch_upcoming_matches(league_ids):
     if cached:
         print("Returning cached upcoming matches")
         return json.loads(cached)
-    
+
     all_matches = []
     headers = {"Authorization": f"Bearer {PANDASCORE_API_KEY}"}
     current_time = datetime.now(timezone.utc)
@@ -59,11 +59,14 @@ def fetch_upcoming_matches(league_ids):
         except requests.exceptions.RequestException as e:
             print(f"Error fetching matches for league {league_id}: {e}")
             continue
-        
-    if all_matches:
-        # Cache the result for 1 hour (3600 seconds)
-        redis_client.setex(cache_key, 3600, json.dumps(all_matches))
-        print("Caching upcoming matches result")
-        return all_matches
-            
-    return all_matches if all_matches else None
+
+    # If no matches were found, store an empty response in cache for 1 hour
+    if not all_matches:
+        redis_client.setex(cache_key, 3600, json.dumps([]))
+        print("No upcoming matches, caching empty result")
+        return []
+
+    # Otherwise, cache the result for 1 hour
+    redis_client.setex(cache_key, 3600, json.dumps(all_matches))
+    print("Caching upcoming matches result")
+    return all_matches

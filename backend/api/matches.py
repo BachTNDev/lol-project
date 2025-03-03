@@ -12,12 +12,9 @@ def get_all_upcoming_matches():
     
     # Fetch matches for all leagues
     matches = fetch_upcoming_matches(league_ids)
-    
+
     if not matches:
-        raise HTTPException(
-            status_code=404,
-            detail="No upcoming matches found in major leagues"
-        )
+        return []  # Return an empty array if no matches are found
     
     return [
         {
