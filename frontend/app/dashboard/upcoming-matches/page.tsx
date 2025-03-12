@@ -6,7 +6,7 @@ import LeagueColumn from "@/components/LeagueColumn";
 export default function UpcomingPage() {
   return (
     <div className="min-h-screen p-8 container mx-auto">
-      <h1 className="text-3xl font-bold mb-8">Upcoming Matches Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-8">Upcoming Matches</h1>
       <MatchList>
         {(matches) => {
           // Group matches by league abbreviation
