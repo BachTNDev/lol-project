@@ -32,8 +32,9 @@ ProMatch Analyzer is a League of Legends **pro match analysis tool** that provid
 ```bash
 git clone https://github.com/yourusername/promatch-analyzer.git
 cd promatch-analyzer
+```
 
-## 2️⃣ Set Up Backend (FastAPI)
+### 2️⃣ Set Up Backend (FastAPI)
 
 ### Install dependencies
 ```bash
