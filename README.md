@@ -1,5 +1,7 @@
 # ProMatch Analyzer 🎮📊  
 
+⚠️ **Work in Progress:** This project is actively being developed. Some features may be incomplete or subject to change. 
+
 ProMatch Analyzer is a League of Legends **pro match analysis tool** that provides **match predictions** based on historical data and machine learning models. It fetches upcoming matches from the **PandaScore API**, processes data using **FastAPI**, and predicts match outcomes using **scikit-learn models with Redis caching** for efficiency.  
 
 ---
@@ -144,18 +146,11 @@ This saves the model as `match_prediction_model.pkl`.
 🟡 Add database for storing match history  
 🟡 Deploy backend & frontend  
 
----
-
-## 📜 License
-This project is licensed under the **MIT License**.
-
----
-
 ## 🌟 Credits
-Built by **[Your Name]** as a portfolio project for **data science & analytics** in esports.
+Built by **Bach Nguyen** as a portfolio project for **data science & analytics** in esports.
 
 ---
 
 ## 🚀 Stay Updated
 📢 Follow for updates!  
-📧 Contact: `your.email@example.com`
+📧 Contact: bach.tnguyen@outlook.com
