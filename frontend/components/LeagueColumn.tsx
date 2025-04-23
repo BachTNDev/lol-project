@@ -27,20 +27,26 @@ export default function LeagueColumn({ league, matches }: LeagueColumnProps) {
       <div className="space-y-3">
         {matches.map((match) => (
           <div key={match.id} className="bg-gray-700 p-3 rounded">
-            <div className="flex items-center justify-between">
-              {match.opponents.map((opponent, idx) => (
-                <div key={opponent.opponent.name} className="flex items-center">
-                  {idx > 0 && <span className="mx-2 text-gray-300">vs</span>}
-                  <div className="text-center">
-                    <img
-                      src={opponent.opponent.image_url || "/default-team.png"}
-                      className="h-12 w-12 mx-auto mb-1 rounded-full"
-                      alt={opponent.opponent.name}
-                    />
-                    <span className="text-sm text-gray-200">{opponent.opponent.name}</span>
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-center justify-between space-x-4">
+              <div className="flex-1 text-center">
+                <img
+                  src={match.opponents[0]?.opponent.image_url || "/default-team.png"}
+                  className="h-12 w-12 mx-auto mb-1 rounded-full"
+                  alt={match.opponents[0]?.opponent.name}
+                />
+                <span className="text-sm text-gray-200">{match.opponents[0]?.opponent.name}</span>
+              </div>
+
+              <div className="text-gray-300 text-sm">vs</div>
+
+              <div className="flex-1 text-center">
+                <img
+                  src={match.opponents[1]?.opponent.image_url || "/default-team.png"}
+                  className="h-12 w-12 mx-auto mb-1 rounded-full"
+                  alt={match.opponents[1]?.opponent.name}
+                />
+                <span className="text-sm text-gray-200">{match.opponents[1]?.opponent.name}</span>
+              </div>
             </div>
             <div className="text-center mt-2 text-sm text-gray-200">
               {new Date(match.scheduled_at).toLocaleString([], {

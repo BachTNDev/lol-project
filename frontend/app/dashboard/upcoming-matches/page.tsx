@@ -18,8 +18,8 @@ export default function UpcomingPage() {
           }, {} as Record<string, typeof matches>);
 
           return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {["LCK", "LPL", "LEC", "LTA"].map((league) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {["LCK", "LPL", "LEC"].map((league) => (
                 <LeagueColumn
                   key={league}
                   league={league}

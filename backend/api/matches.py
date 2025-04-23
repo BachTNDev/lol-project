@@ -3,7 +3,7 @@ from utils.pandascoreAPI import fetch_upcoming_matches
 
 router = APIRouter()
 
-STATIC_LEAGUE_IDS = [293, 294, 5347, 4197]
+STATIC_LEAGUE_IDS = [293, 294, 4197]
 
 @router.get("/upcoming-matches")
 def get_all_upcoming_matches():
@@ -34,6 +34,5 @@ def get_league_abbreviation(league_id):
     return {
         293: "LCK",
         294: "LPL",
-        5347: "LTA",
         4197: "LEC"
     }.get(league_id, "UNK")
